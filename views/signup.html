@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Signup - QuickPrint</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+
+<body class="auth-page">
+
+<div class="auth-card">
+
+    <a href="/" class="logo">
+        <span>QP</span>
+        QuickPrint
+    </a>
+
+    <h1>Create account</h1>
+
+    <p class="muted">
+        Join Campus QuickPrint
+    </p>
+
+
+    <form id="signupForm">
+
+        <label>Name</label>
+
+        <input
+            type="text"
+            id="name"
+            required
+            placeholder="Your name"
+        >
+
+
+        <label>Email</label>
+
+        <input
+            type="email"
+            id="email"
+            required
+            placeholder="you@example.com"
+        >
+
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            id="password"
+            required
+            placeholder="Create password"
+        >
+
+
+        <label>Account Type</label>
+
+        <select id="role">
+
+            <option value="student">
+                Student
+            </option>
+
+            <option value="shopkeeper">
+                Print Shop Owner
+            </option>
+
+        </select>
+
+
+        <div id="shopFields" class="hidden">
+
+            <label>Shop Name</label>
+
+            <input
+                type="text"
+                id="storeName"
+                placeholder="ABC Xerox"
+            >
+
+
+            <label>Shop Location</label>
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Block A, Ground Floor"
+            >
+
+        </div>
+
+
+        <button class="primary-button full">
+            Create Account
+        </button>
+
+    </form>
+
+
+    <p id="message"></p>
+
+
+    <p class="auth-footer">
+        Already have an account?
+        <a href="/login">Login</a>
+    </p>
+
+</div>
+
+
+<script src="/js/auth.js"></script>
+
+</body>
+
+</html>

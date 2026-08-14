@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+
+<body>
+
+<nav class="navbar">
+
+    <a href="/student" class="logo">
+        <span>QP</span>
+        QuickPrint
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="#shops">
+            Print Shops
+        </a>
+
+        <a href="#orders">
+            My Orders
+        </a>
+
+        <button onclick="logout()"
+                class="logout-button">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+
+<main class="dashboard">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <p class="eyebrow">
+                STUDENT DASHBOARD
+            </p>
+
+            <h1>
+                Good morning,
+                <span id="userName"></span> 👋
+            </h1>
+
+            <p>
+                Find the fastest queue and place your print order.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <section id="shops">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>Choose a print shop</h2>
+
+                <p>
+                    Compare queues before placing your order.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="stores"
+             class="store-grid">
+
+            <div class="loading">
+                Loading shops...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="orders"
+             class="orders-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>My Orders</h2>
+
+                <p>
+                    Track your active and completed orders.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="ordersList">
+
+            <div class="loading">
+                Loading orders...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ORDER MODAL -->
+
+<div id="orderModal"
+     class="modal hidden">
+
+    <div class="modal-card">
+
+        <button class="close"
+                onclick="closeOrderModal()">
+            ×
+        </button>
+
+        <h2>Place print order</h2>
+
+        <p id="selectedStore"></p>
+
+
+        <form id="orderForm">
+
+            <input type="hidden"
+                   id="storeId">
+
+
+            <label>File</label>
+
+            <input
+                type="file"
+                id="file"
+                accept=".pdf,.jpg,.jpeg,.png"
+                required
+            >
+
+
+            <label>Copies</label>
+
+            <input
+                type="number"
+                id="copies"
+                min="1"
+                value="1"
+                required
+            >
+
+
+            <label>Print Type</label>
+
+            <select id="printType">
+
+                <option value="black-white">
+                    Black & White
+                </option>
+
+                <option value="color">
+                    Color
+                </option>
+
+            </select>
+
+
+            <label>Pages</label>
+
+            <select id="sides">
+
+                <option value="single">
+                    Single-sided
+                </option>
+
+                <option value="double">
+                    Double-sided
+                </option>
+
+            </select>
+
+
+            <label>Instructions</label>
+
+            <textarea
+                id="instructions"
+                placeholder="Any special instructions?"
+            ></textarea>
+
+
+            <button class="primary-button full">
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="/js/student.js"></script>
+
+</body>
+
+</html>

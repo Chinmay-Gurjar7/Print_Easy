@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shop Dashboard</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+
+<body>
+
+<nav class="navbar">
+
+    <a href="/shopkeeper"
+       class="logo">
+
+        <span>QP</span>
+        QuickPrint
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <span id="shopName"></span>
+
+        <button onclick="logout()"
+                class="logout-button">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+
+<main class="dashboard">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <p class="eyebrow">
+                SHOPKEEPER DASHBOARD
+            </p>
+
+            <h1>
+                Today's Print Queue
+            </h1>
+
+            <p>
+                Complete orders from top to bottom.
+            </p>
+
+        </div>
+
+
+        <div class="queue-count">
+
+            <strong id="queueCount">
+                0
+            </strong>
+
+            <span>
+                pending
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="queue-note">
+
+        🔒 Orders must be completed sequentially.
+        The next available order is always at the top.
+
+    </div>
+
+
+    <div id="shopOrders">
+
+        <div class="loading">
+            Loading queue...
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- CONFIRM MODAL -->
+
+<div id="confirmModal"
+     class="modal hidden">
+
+    <div class="modal-card">
+
+        <h2>Complete this order?</h2>
+
+        <p>
+            Make sure the document has been printed
+            before completing this order.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-button"
+                onclick="closeModal()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                id="confirmButton"
+                class="primary-button">
+
+                Yes, Order Done
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="/js/shopkeeper.js"></script>
+
+</body>
+
+</html>
